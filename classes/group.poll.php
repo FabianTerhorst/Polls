@@ -13,7 +13,8 @@ class Polls
 
     function add(){
         $theme = $_POST["theme"];
-        $data = mysql_query("INSERT INTO polls (theme) VALUES ('" . $theme . "')") or die(mysql_error());//mysql_insert_id
+        $data = mysql_query("INSERT INTO polls (theme) VALUES ('" . $theme . "')") or die(mysql_error());
+        header("Location: http://localhost:1026/" . mysql_insert_id());
     }
 
     function get(){
