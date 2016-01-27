@@ -1,1 +1,1 @@
-# KappaPoll
+# Polls
