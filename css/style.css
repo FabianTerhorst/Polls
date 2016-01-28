@@ -16,6 +16,10 @@
     flex-direction: column;
 }
 
+.mdl-spinner {
+    margin: auto;
+}
+
 .mdl-card.poll > form > .mdl-card__supporting-text > button {
     margin:auto;
     margin-top: 50px;
@@ -53,6 +57,7 @@
 
 .mdl-textfield.title > .mdl-textfield__input {
     padding: 8px 0;
+    font-size: 25px;
 }
 
 .mdl-textfield.animate {
@@ -80,4 +85,16 @@
 
 @keyframes flip {
     100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+.answer {
+    background-color: #2196F3;
+    transition: all 0.5s;
+}
+.answer:hover {
+    background-color: #1976D2;
+}
+.answer > p {
+    padding: 10px;
+    color: white;
 }

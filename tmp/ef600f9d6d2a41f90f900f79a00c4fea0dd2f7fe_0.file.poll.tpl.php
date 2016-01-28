@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-14 11:05:40
+<?php /* Smarty version 3.1.27, created on 2016-01-28 14:26:47
          compiled from "views/poll.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:347401011569772f4ba31e0_09119649%%*/
+/*%%SmartyHeaderCode:121710161056aa171740b375_27745246%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ef600f9d6d2a41f90f900f79a00c4fea0dd2f7fe' => 
     array (
       0 => 'views/poll.tpl',
-      1 => 1452765938,
+      1 => 1453987605,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '347401011569772f4ba31e0_09119649',
+  'nocache_hash' => '121710161056aa171740b375_27745246',
   'variables' => 
   array (
     'poll' => 0,
@@ -21,17 +21,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_569772f4be4b65_95175061',
+  'unifunc' => 'content_56aa171744bbc7_07188706',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_569772f4be4b65_95175061')) {
-function content_569772f4be4b65_95175061 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56aa171744bbc7_07188706')) {
+function content_56aa171744bbc7_07188706 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '347401011569772f4ba31e0_09119649';
+$_smarty_tpl->properties['nocache_hash'] = '121710161056aa171740b375_27745246';
 ?>
-<p><?php echo $_smarty_tpl->tpl_vars['poll']->value->theme;?>
-</p>
-<?php
+<div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">
+        <?php echo $_smarty_tpl->tpl_vars['poll']->value->theme;?>
+
+    </h2>
+</div>
+<div class="mdl-card__supporting-text">
+    <?php
 $_from = $_smarty_tpl->tpl_vars['poll']->value->answers;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -42,11 +47,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['answer']->value) {
 $_smarty_tpl->tpl_vars['answer']->_loop = true;
 $foreach_answer_Sav = $_smarty_tpl->tpl_vars['answer'];
 ?>
-<p><?php echo $_smarty_tpl->tpl_vars['answer']->value->name;?>
+        <div class="answer mdl-shadow--2dp">
+            <p><?php echo $_smarty_tpl->tpl_vars['answer']->value->name;?>
 </p>
-<?php
+        </div>
+    <?php
 $_smarty_tpl->tpl_vars['answer'] = $foreach_answer_Sav;
 }
-}
+?>
+</div><?php }
 }
 ?>
