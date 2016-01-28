@@ -4,6 +4,11 @@ require_once("smarty-3.1.27/libs/Smarty.class.php");
 require_once("classes/group.poll.php");
 require_once("classes/class.dbconnect.php");
 
+/*if (function_exists('mb_internal_charset')) {
+    mb_internal_charset('EUC-JP');
+}
+define('SMARTY_RESOURCE_CHAR_SET', 'EUC-JP');*/
+
 $smarty = new Smarty();
 $smarty->setTemplateDir("views");
 $smarty->setCompileDir("tmp");

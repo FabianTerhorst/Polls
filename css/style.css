@@ -1,0 +1,61 @@
+.polls-layout-transparent {
+    /*background: url('/assets/transparent.jpg') center / cover;*/
+}
+.polls-layout-transparent .mdl-layout__header,
+.polls-layout-transparent .mdl-layout__drawer-button {
+    color: white;
+}
+.mdl-card.poll{
+    margin:auto;
+    width:600px;
+}
+
+.mdl-card.poll > form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mdl-card.poll > form > .mdl-card__supporting-text > button {
+    margin:auto;
+    margin-top: 50px;
+}
+
+.mdl-card.poll > form > .mdl-card__supporting-text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mdl-textfield.animate {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotateX(-80deg);
+    -moz-transform: rotateX(-80deg);
+    transform: rotateX(-80deg);
+    -webkit-animation: flip .8s ease-in-out forwards;
+    -moz-animation: flip .8s ease-in-out forwards;
+    animation: flip .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes flip {
+    100% { -webkit-transform: rotateX(0deg); opacity: 1; }
+}
+
+@-moz-keyframes flip {
+    100% { -moz-transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes flip {
+    100% { transform: rotateX(0deg); opacity: 1; }
+}

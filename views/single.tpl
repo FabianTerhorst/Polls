@@ -1,9 +1,4 @@
-<html>
-<head>
-    <title>Bla</title>
-    <script src="/js/jquery-2.2.0.min.js"></script>
-</head>
-<body>
+{include file="header.tpl"}
     <div id="poll">
 
     </div>
@@ -21,5 +16,7 @@
         }
     });
 </script>
+</main>
+</div>
 </body>
 </html>

@@ -14,7 +14,15 @@ class Polls
     function add(){
         $theme = $_POST["theme"];
         $data = mysql_query("INSERT INTO polls (theme) VALUES ('" . $theme . "')") or die(mysql_error());
-        header("Location: http://localhost:1026/" . mysql_insert_id());
+        $id = mysql_insert_id();
+        foreach($_POST as $key => $value){
+            if(strpos($key, "answer") !== false){
+                if($value != "") {
+                    mysql_query("INSERT INTO polls_answers (name, pollid) VALUES ('" . $value . "', '" . $id . "')") or die(mysql_error());
+                }
+            }
+        }
+        header("Location: http://localhost:1026/" . $id);
     }
 
     function get(){
