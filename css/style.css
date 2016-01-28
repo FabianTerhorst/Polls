@@ -25,12 +25,34 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 0;
 }
 
 #answers {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mdl-textfield{
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.mdl-textfield__label:after {
+    bottom: 10px;
+}
+
+.mdl-textfield {
+    width: 450px;
+}
+
+.mdl-textfield.title > .mdl-textfield__label {
+    font-size: 22px;
+}
+
+.mdl-textfield.title > .mdl-textfield__input {
+    padding: 8px 0;
 }
 
 .mdl-textfield.animate {
