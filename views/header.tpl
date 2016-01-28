@@ -2,12 +2,12 @@
 <head>
     <title>Bla</title>
     <script src="/js/jquery-2.2.0.min.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.amber-light_green.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="polls-layout-transparent mdl-layout mdl-js-layout">
