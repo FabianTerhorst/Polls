@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-03 10:54:31
+<?php /* Smarty version 3.1.27, created on 2016-02-03 11:40:41
          compiled from "views/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:26985392356b1ce57b0c395_25223946%%*/
+/*%%SmartyHeaderCode:164500806456b1d9292f3618_52967569%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '060abf0b97e0af3d1307708ca95b6c89fd7a5b4a' => 
     array (
       0 => 'views/header.tpl',
-      1 => 1454493269,
+      1 => 1454496038,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26985392356b1ce57b0c395_25223946',
+  'nocache_hash' => '164500806456b1d9292f3618_52967569',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56b1ce57b29a65_52766652',
+  'unifunc' => 'content_56b1d929351937_68783051',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56b1ce57b29a65_52766652')) {
-function content_56b1ce57b29a65_52766652 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1d929351937_68783051')) {
+function content_56b1d929351937_68783051 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '26985392356b1ce57b0c395_25223946';
+$_smarty_tpl->properties['nocache_hash'] = '164500806456b1d9292f3618_52967569';
 ?>
 <html>
 <head>
     <title>Bla</title>
     <?php echo '<script'; ?>
  src="/js/jquery-2.2.0.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="/js/prefixfree.min.js"><?php echo '</script'; ?>
 >
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php echo '<script'; ?>
