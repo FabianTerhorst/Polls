@@ -1,9 +1,10 @@
-<div class="mdl-card poll mdl-shadow--2dp">
-    <form action="/api/createPoll" method="post">
+<div class="mdl-card poll">
+    <form action="/api/appendToPoll" method="post">
+        <input name="pollid" value="{$pollId}" hidden>
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text"><div class="mdl-textfield title mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" name="theme">
-                    <label class="mdl-textfield__label">Titel deiner Umfrage</label>
+                    <label class="mdl-textfield__label">Titel deiner Frage</label>
                 </div></h2>
         </div>
         <div class="mdl-card__supporting-text">

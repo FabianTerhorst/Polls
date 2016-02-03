@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-03 11:40:41
+<?php /* Smarty version 3.1.27, created on 2016-02-03 12:24:07
          compiled from "views/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:164500806456b1d9292f3618_52967569%%*/
+/*%%SmartyHeaderCode:136370611656b1e3578d6452_59807936%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '060abf0b97e0af3d1307708ca95b6c89fd7a5b4a' => 
     array (
       0 => 'views/header.tpl',
-      1 => 1454496038,
+      1 => 1454498637,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '164500806456b1d9292f3618_52967569',
+  'nocache_hash' => '136370611656b1e3578d6452_59807936',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56b1d929351937_68783051',
+  'unifunc' => 'content_56b1e357910008_35773539',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56b1d929351937_68783051')) {
-function content_56b1d929351937_68783051 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1e357910008_35773539')) {
+function content_56b1e357910008_35773539 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '164500806456b1d9292f3618_52967569';
+$_smarty_tpl->properties['nocache_hash'] = '136370611656b1e3578d6452_59807936';
 ?>
 <html>
 <head>
@@ -33,31 +33,55 @@ $_smarty_tpl->properties['nocache_hash'] = '164500806456b1d9292f3618_52967569';
     <?php echo '<script'; ?>
  src="/js/prefixfree.min.js"><?php echo '</script'; ?>
 >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php echo '<script'; ?>
- src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"><?php echo '</script'; ?>
+ src="/js/material.min.js"><?php echo '</script'; ?>
 >
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.amber-light_green.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"><?php echo '</script'; ?>
 >
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/css/material.amber-light_green.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="polls-layout-transparent mdl-layout mdl-js-layout">
     <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
-            <!-- Title -->
             <span class="mdl-layout-title">Title</span>
-            <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
-            <!-- Navigation -->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">
-                    <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--green-500 mdl-color-text--white">
+                <a class="mdl-navigation__link">
+                    <button id="login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Login
-                    </a>
+                    </button>
+                    <dialog id="login-dialog" class="mdl-dialog">
+                        <h4 class="mdl-dialog__title">Allow data collection?</h4>
+                        <div class="mdl-dialog__content">
+                            <p>
+                                Allowing us to collect data will let us get you the information you want faster.
+                            <p>
+                        </div>
+                        <div class="mdl-dialog__actions">
+                            <button type="button" class="mdl-button">Agree</button>
+                            <button type="button" class="mdl-button close">Disagree</button>
+                        </div>
+                    </dialog>
+                    <?php echo '<script'; ?>
+>
+                        var dialog = document.querySelector('#login-dialog');
+                        var showDialogButton = document.querySelector('#login');
+                        if (! dialog.showModal) {
+                            dialogPolyfill.registerDialog(dialog);
+                        }
+                        showDialogButton.addEventListener('click', function() {
+                            dialog.showModal();
+                        });
+                        dialog.querySelector('.close').addEventListener('click', function() {
+                            dialog.close();
+                        });
+                    <?php echo '</script'; ?>
+>
                 </a>
             </nav>
         </div>

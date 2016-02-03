@@ -11,10 +11,6 @@
     margin-bottom: 50px;
 }
 
-.mdl-card.poll:last-child {
-    margin-bottom: 0;
-}
-
 .mdl-card.poll > form {
     display: flex;
     align-items: center;
@@ -35,6 +31,10 @@
     align-items: center;
     flex-direction: column;
     padding-top: 0;
+}
+
+.mdl-card.poll > .mdl-card__title > .mdl-card__title-text {
+    user-select: none;
 }
 
 #answers {
@@ -117,7 +117,8 @@
 }
 
 .answer > .content > .nameContent > .name {
-    position: fixed;
+    position: absolute;
+    width: 554px;
 }
 
 .answer:last-child {
@@ -145,6 +146,20 @@
     top: 0;
 }
 
-#poll > div.mdl-card__supporting-text {
+.poll > div.mdl-card__supporting-text {
     width: 94.6%;
+}
+
+#add-answer{
+    position: fixed;
+    right:20px;
+    bottom:20px;
+}
+
+.mdl-dialog{
+    width: fit-content;
+}
+
+.mdl-card {
+    min-height: inherit;
 }

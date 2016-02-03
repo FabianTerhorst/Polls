@@ -26,6 +26,13 @@ switch($_SERVER['REQUEST_URI']){
     case "/api/vote":
         $polls->vote();
         break;
+    case "/api/createPollUI":
+        $smarty->assign("pollId", $_POST["pollid"]);
+        $smarty->display("poll_create.tpl");;
+        break;
+    case "/api/appendToPoll":
+        $polls->addAndAppend();
+        break;
     case "/api/selectPoll":
         $poll = $polls->get();
         $smarty->assign("poll", $poll);

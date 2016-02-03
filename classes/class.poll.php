@@ -6,6 +6,7 @@ class Poll {
     public $theme;
     public $answers;
     public $votes;
+    public $childs;
 
     function __construct(){
 

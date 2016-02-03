@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-03 11:14:28
+<?php /* Smarty version 3.1.27, created on 2016-02-03 12:36:04
          compiled from "views/poll_create.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10906383956b1d30400eb93_30673132%%*/
+/*%%SmartyHeaderCode:11297568156b1e6249b52b3_65313710%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,33 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '218c4abfb4e7d12b431b69b0a1a229097ce39d3e' => 
     array (
       0 => 'views/poll_create.tpl',
-      1 => 1454494282,
+      1 => 1454499359,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10906383956b1d30400eb93_30673132',
+  'nocache_hash' => '11297568156b1e6249b52b3_65313710',
+  'variables' => 
+  array (
+    'pollId' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56b1d30401d197_78742339',
+  'unifunc' => 'content_56b1e6249fe819_11852086',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56b1d30401d197_78742339')) {
-function content_56b1d30401d197_78742339 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1e6249fe819_11852086')) {
+function content_56b1e6249fe819_11852086 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '10906383956b1d30400eb93_30673132';
+$_smarty_tpl->properties['nocache_hash'] = '11297568156b1e6249b52b3_65313710';
 ?>
-<div class="mdl-card poll mdl-shadow--2dp">
-    <form action="/api/createPoll" method="post">
+<div class="mdl-card poll">
+    <form action="/api/appendToPoll" method="post">
+        <input name="pollid" value="<?php echo $_smarty_tpl->tpl_vars['pollId']->value;?>
+" hidden>
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text"><div class="mdl-textfield title mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" name="theme">
-                    <label class="mdl-textfield__label">Titel deiner Umfrage</label>
+                    <label class="mdl-textfield__label">Titel deiner Frage</label>
                 </div></h2>
         </div>
         <div class="mdl-card__supporting-text">
