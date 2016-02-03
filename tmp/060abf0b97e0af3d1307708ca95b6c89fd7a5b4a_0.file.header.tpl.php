@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-03 12:24:07
+<?php /* Smarty version 3.1.27, created on 2016-02-03 13:14:30
          compiled from "views/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:136370611656b1e3578d6452_59807936%%*/
+/*%%SmartyHeaderCode:15276058756b1ef2613bd08_20403025%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '060abf0b97e0af3d1307708ca95b6c89fd7a5b4a' => 
     array (
       0 => 'views/header.tpl',
-      1 => 1454498637,
+      1 => 1454501668,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '136370611656b1e3578d6452_59807936',
+  'nocache_hash' => '15276058756b1ef2613bd08_20403025',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56b1e357910008_35773539',
+  'unifunc' => 'content_56b1ef26173054_32531945',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56b1e357910008_35773539')) {
-function content_56b1e357910008_35773539 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1ef26173054_32531945')) {
+function content_56b1ef26173054_32531945 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '136370611656b1e3578d6452_59807936';
+$_smarty_tpl->properties['nocache_hash'] = '15276058756b1ef2613bd08_20403025';
 ?>
 <html>
 <head>
-    <title>Bla</title>
+    <title>Umfragen</title>
     <?php echo '<script'; ?>
  src="/js/jquery-2.2.0.min.js"><?php echo '</script'; ?>
 >
@@ -48,12 +48,12 @@ $_smarty_tpl->properties['nocache_hash'] = '136370611656b1e3578d6452_59807936';
 <div class="polls-layout-transparent mdl-layout mdl-js-layout">
     <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">Umfragen</span>
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link">
                     <button id="login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Login
+                        Anmelden
                     </button>
                     <dialog id="login-dialog" class="mdl-dialog">
                         <h4 class="mdl-dialog__title">Allow data collection?</h4>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-03 12:36:04
+<?php /* Smarty version 3.1.27, created on 2016-02-03 13:08:31
          compiled from "views/poll_create.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:11297568156b1e6249b52b3_65313710%%*/
+/*%%SmartyHeaderCode:159240678056b1edbfeb4419_59242179%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '218c4abfb4e7d12b431b69b0a1a229097ce39d3e' => 
     array (
       0 => 'views/poll_create.tpl',
-      1 => 1454499359,
+      1 => 1454501307,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11297568156b1e6249b52b3_65313710',
+  'nocache_hash' => '159240678056b1edbfeb4419_59242179',
   'variables' => 
   array (
     'pollId' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56b1e6249fe819_11852086',
+  'unifunc' => 'content_56b1edbff0aa12_91617053',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56b1e6249fe819_11852086')) {
-function content_56b1e6249fe819_11852086 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1edbff0aa12_91617053')) {
+function content_56b1edbff0aa12_91617053 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '11297568156b1e6249b52b3_65313710';
+$_smarty_tpl->properties['nocache_hash'] = '159240678056b1edbfeb4419_59242179';
 ?>
 <div class="mdl-card poll">
     <form action="/api/appendToPoll" method="post">
@@ -66,7 +66,7 @@ $_smarty_tpl->properties['nocache_hash'] = '11297568156b1e6249b52b3_65313710';
                 </div>
             </div>
             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                Umfrage erstellen
+                Frage hinzufügen
             </button>
         </div>
     </form>

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Bla</title>
+    <title>Umfragen</title>
     <script src="/js/jquery-2.2.0.min.js"></script>
     <script src="/js/prefixfree.min.js"></script>
     <script src="/js/material.min.js"></script>
@@ -14,12 +14,12 @@
 <div class="polls-layout-transparent mdl-layout mdl-js-layout">
     <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">Umfragen</span>
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link">
                     <button id="login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Login
+                        Anmelden
                     </button>
                     <dialog id="login-dialog" class="mdl-dialog">
                         <h4 class="mdl-dialog__title">Allow data collection?</h4>
