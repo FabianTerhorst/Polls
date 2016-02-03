@@ -97,18 +97,8 @@
     align-items: center;
 }
 
-/*.answer:after {
-    content: "Antwort 1";
-    width: 30%;
-    background-color: #9E9E9E;
-    padding: 13px 0 13px 13px;
-    color: #FFFFFF;
-    transition: all 0.5s;
-}*/
-
 .answer > .content {
     background-color: #2196F3;
-    /*padding: 13px 0 13px 13px;*/
     color: #FFFFFF;
     transition: all 0.5s;
     position: absolute;
@@ -117,6 +107,11 @@
 
 .answer > .content > .nameContent > .name{
     padding: 13px 0 13px 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .answer > .content:hover {
@@ -129,7 +124,6 @@
 }
 
 .answer > .content > .nameContent > .name {
-    /*position: relative;*/
     position: fixed;
 }
 
@@ -157,11 +151,6 @@
     right: 0;
     top: 0;
 }
-
-/*.answer:after{
-    background-color: #2196F3;
-    width:50%;
-}*/
 
 #poll > div.mdl-card__supporting-text {
     width: 94.6%;
