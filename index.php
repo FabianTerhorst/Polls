@@ -23,6 +23,9 @@ switch($_SERVER['REQUEST_URI']){
     case "/api/createPoll":
         $polls->add();
         break;
+    case "/api/vote":
+        $polls->vote();
+        break;
     case "/api/selectPoll":
         $poll = $polls->get();
         $smarty->assign("poll", $poll);

@@ -4,27 +4,39 @@
         <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
     </div>
 </div>
-<script type="application/javascript">
+<script type="text/javascript">
     $id = "{$pollId}";
-    $.ajax({
-        url: "/api/selectPoll",
-        type: 'POST',
-        data: {
-            'id': '{$pollId}'
-        },
-        success: function(msg){
-            console.log(msg);
-            $("#poll").html(msg);
-        }
-    });
+    function selectPoll() {
+        $.ajax({
+            url: "/api/selectPoll",
+            type: 'POST',
+            data: {
+                'id': '{$pollId}'
+            },
+            success: function(msg){
+                $("#poll").html(msg);
+            }
+        });
+    }
 
-    var pattern = Trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight
+    selectPoll();
+
+    $("#poll").on("click", ".answer", function() {
+        $.ajax({
+            url: "/api/vote",
+            type: 'POST',
+            data: {
+                'pollid': '{$pollId}',
+                'answerid': $(this).attr("answerid")
+            },
+            success: function(msg){
+                var json = JSON.parse(msg);
+                json.forEach(function(entry) {
+                    var width = entry.votes.toString() + "%";
+                    $("#answer" + entry.id).css("width", width);
+                });
+            }
+        })
     });
-    document.body.appendChild(pattern.canvas())
 </script>
-</main>
-</div>
-</body>
-</html>
+{include file="footer.tpl"}

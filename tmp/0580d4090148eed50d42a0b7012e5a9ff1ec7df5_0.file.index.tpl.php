@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-28 14:14:37
+<?php /* Smarty version 3.1.27, created on 2016-01-28 15:24:47
          compiled from "views/index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:93235056556aa143d92fe01_75055204%%*/
+/*%%SmartyHeaderCode:201852081556aa24afbaf671_76606733%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0580d4090148eed50d42a0b7012e5a9ff1ec7df5' => 
     array (
       0 => 'views/index.tpl',
-      1 => 1453981295,
+      1 => 1453987813,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '93235056556aa143d92fe01_75055204',
+  'nocache_hash' => '201852081556aa24afbaf671_76606733',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56aa143d9754b4_30190857',
+  'unifunc' => 'content_56aa24afbf5f24_70326220',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56aa143d9754b4_30190857')) {
-function content_56aa143d9754b4_30190857 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56aa24afbf5f24_70326220')) {
+function content_56aa24afbf5f24_70326220 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '93235056556aa143d92fe01_75055204';
+$_smarty_tpl->properties['nocache_hash'] = '201852081556aa24afbaf671_76606733';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -82,17 +82,10 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
                 componentHandler.upgradeDom();
             }
         });
-
-        var pattern = Trianglify({
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-        document.body.appendChild(pattern.canvas())
     <?php echo '</script'; ?>
 >
-</main>
-</div>
-</body>
-</html><?php }
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+
+}
 }
 ?>

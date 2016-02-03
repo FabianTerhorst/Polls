@@ -54,14 +54,5 @@
                 componentHandler.upgradeDom();
             }
         });
-
-        var pattern = Trianglify({
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-        document.body.appendChild(pattern.canvas())
     </script>
-</main>
-</div>
-</body>
-</html>
+{include file="footer.tpl"}

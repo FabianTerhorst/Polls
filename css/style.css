@@ -88,13 +88,81 @@
 }
 
 .answer {
-    background-color: #2196F3;
+    background-color: #9E9E9E;
     transition: all 0.5s;
+    position: relative;
+    height: 44px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
-.answer:hover {
+
+/*.answer:after {
+    content: "Antwort 1";
+    width: 30%;
+    background-color: #9E9E9E;
+    padding: 13px 0 13px 13px;
+    color: #FFFFFF;
+    transition: all 0.5s;
+}*/
+
+.answer > .content {
+    background-color: #2196F3;
+    /*padding: 13px 0 13px 13px;*/
+    color: #FFFFFF;
+    transition: all 0.5s;
+    position: absolute;
+    height: 44px;
+}
+
+.answer > .content > .nameContent > .name{
+    padding: 13px 0 13px 13px;
+}
+
+.answer > .content:hover {
     background-color: #1976D2;
 }
+
+.answer > .content > .nameContent {
+    position: absolute;
+    width: 100%;
+}
+
+.answer > .content > .nameContent > .name {
+    /*position: relative;*/
+    position: fixed;
+}
+
+.answer:last-child {
+    margin-bottom: 0;
+}
+
+.answer:hover {
+    background-color: #616161;
+}
+
+.answer:hover > .content {
+    background-color: #1976D2;
+}
+
+.answer.mdl-color--grey-500:hover {
+    background-color: #616161 !important;
+}
+
 .answer > p {
     padding: 10px;
     color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+/*.answer:after{
+    background-color: #2196F3;
+    width:50%;
+}*/
+
+#poll > div.mdl-card__supporting-text {
+    width: 94.6%;
 }

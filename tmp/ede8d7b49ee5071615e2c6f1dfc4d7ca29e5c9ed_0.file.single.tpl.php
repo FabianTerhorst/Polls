@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-28 14:13:31
+<?php /* Smarty version 3.1.27, created on 2016-02-03 10:51:31
          compiled from "views/single.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:114950637556aa13fb1e0eb2_52208306%%*/
+/*%%SmartyHeaderCode:199347527156b1cda34c21f2_32299568%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ede8d7b49ee5071615e2c6f1dfc4d7ca29e5c9ed' => 
     array (
       0 => 'views/single.tpl',
-      1 => 1453986809,
+      1 => 1454493076,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '114950637556aa13fb1e0eb2_52208306',
+  'nocache_hash' => '199347527156b1cda34c21f2_32299568',
   'variables' => 
   array (
     'pollId' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56aa13fb209916_16797299',
+  'unifunc' => 'content_56b1cda351a404_26828351',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56aa13fb209916_16797299')) {
-function content_56aa13fb209916_16797299 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1cda351a404_26828351')) {
+function content_56b1cda351a404_26828351 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '114950637556aa13fb1e0eb2_52208306';
+$_smarty_tpl->properties['nocache_hash'] = '199347527156b1cda34c21f2_32299568';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -36,32 +36,47 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
     </div>
 </div>
 <?php echo '<script'; ?>
- type="application/javascript">
+ type="text/javascript">
     $id = "<?php echo $_smarty_tpl->tpl_vars['pollId']->value;?>
 ";
-    $.ajax({
-        url: "/api/selectPoll",
-        type: 'POST',
-        data: {
-            'id': '<?php echo $_smarty_tpl->tpl_vars['pollId']->value;?>
+    function selectPoll() {
+        $.ajax({
+            url: "/api/selectPoll",
+            type: 'POST',
+            data: {
+                'id': '<?php echo $_smarty_tpl->tpl_vars['pollId']->value;?>
 '
-        },
-        success: function(msg){
-            console.log(msg);
-            $("#poll").html(msg);
-        }
-    });
+            },
+            success: function(msg){
+                $("#poll").html(msg);
+            }
+        });
+    }
 
-    var pattern = Trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight
+    selectPoll();
+
+    $("#poll").on("click", ".answer", function() {
+        $.ajax({
+            url: "/api/vote",
+            type: 'POST',
+            data: {
+                'pollid': '<?php echo $_smarty_tpl->tpl_vars['pollId']->value;?>
+',
+                'answerid': $(this).attr("answerid")
+            },
+            success: function(msg){
+                var json = JSON.parse(msg);
+                json.forEach(function(entry) {
+                    var width = entry.votes.toString() + "%";
+                    $("#answer" + entry.id).css("width", width);
+                });
+            }
+        })
     });
-    document.body.appendChild(pattern.canvas())
 <?php echo '</script'; ?>
 >
-</main>
-</div>
-</body>
-</html><?php }
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+
+}
 }
 ?>

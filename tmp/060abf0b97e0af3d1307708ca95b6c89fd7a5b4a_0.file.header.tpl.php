@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-28 12:12:31
+<?php /* Smarty version 3.1.27, created on 2016-02-03 10:54:31
          compiled from "views/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:98791978956a9f79f2fee88_74334567%%*/
+/*%%SmartyHeaderCode:26985392356b1ce57b0c395_25223946%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '060abf0b97e0af3d1307708ca95b6c89fd7a5b4a' => 
     array (
       0 => 'views/header.tpl',
-      1 => 1453979548,
+      1 => 1454493269,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '98791978956a9f79f2fee88_74334567',
+  'nocache_hash' => '26985392356b1ce57b0c395_25223946',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56a9f79f3449a6_78979982',
+  'unifunc' => 'content_56b1ce57b29a65_52766652',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56a9f79f3449a6_78979982')) {
-function content_56a9f79f3449a6_78979982 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56b1ce57b29a65_52766652')) {
+function content_56b1ce57b29a65_52766652 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '98791978956a9f79f2fee88_74334567';
+$_smarty_tpl->properties['nocache_hash'] = '26985392356b1ce57b0c395_25223946';
 ?>
 <html>
 <head>
@@ -51,10 +51,11 @@ $_smarty_tpl->properties['nocache_hash'] = '98791978956a9f79f2fee88_74334567';
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">
+                    <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--green-500 mdl-color-text--white">
+                        Login
+                    </a>
+                </a>
             </nav>
         </div>
     </header>

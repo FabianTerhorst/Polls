@@ -34,6 +34,8 @@ class Polls
                 $poll = new Poll();
                 $poll->id = $row["id"];
                 $poll->theme = $row["theme"];
+                $votesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $id) or die(mysql_error());
+                $poll->votes = mysql_result($votesResult, 0);
                 $arrAnswers = array();
                 $dataAnswers = mysql_query("SELECT * FROM polls_answers WHERE pollid = " . $id) or die(mysql_error());
                 if (mysql_num_rows($dataAnswers) > 0) {
@@ -41,6 +43,8 @@ class Polls
                         $answer = new Answer();
                         $answer->id = $rowAnswer["id"];
                         $answer->name = $rowAnswer["name"];
+                        $votesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $id ." AND answerid = " . $rowAnswer["id"]) or die(mysql_error());
+                        $answer->votes = mysql_result($votesResult, 0);
                         $arrAnswers[] = $answer;
                     }
                 }
@@ -51,5 +55,31 @@ class Polls
             }
         }
         return $arr;
+    }
+
+    function getVotes($id){
+        $arrAnswers = array();
+        $dataAnswers = mysql_query("SELECT * FROM polls_answers WHERE pollid = " . $id) or die(mysql_error());
+        $votesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $id) or die(mysql_error());
+        $pollVotes = mysql_result($votesResult, 0);
+        if (mysql_num_rows($dataAnswers) > 0) {
+            while ($rowAnswer = mysql_fetch_assoc($dataAnswers)) {
+                $answer = new Answer();
+                $answer->id = $rowAnswer["id"];
+                $answer->name = $rowAnswer["name"];
+                $votesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $id ." AND answerid = " . $rowAnswer["id"]) or die(mysql_error());
+                $answerVotes = mysql_result($votesResult, 0);
+                $answer->votes = 100 / $pollVotes * $answerVotes;
+                $arrAnswers[] = $answer;
+            }
+        }
+        echo json_encode($arrAnswers);
+    }
+
+    function vote(){
+        $pollid = $_POST["pollid"];
+        $answerid = $_POST["answerid"];
+        mysql_query("INSERT INTO polls_votes (pollid, answerid) VALUES ('" . $pollid . "', '" . $answerid . "')") or die(mysql_error());
+        $this->getVotes($pollid);
     }
 }
