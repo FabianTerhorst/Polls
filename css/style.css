@@ -163,3 +163,34 @@
 .mdl-card {
     min-height: inherit;
 }
+
+.mdl-dialog__content > .mdl-textfield > .mdl-textfield__label {
+    top:0;
+}
+
+.width--full{
+    width: 100%;
+}
+
+.width--half{
+    width:50%;
+}
+
+#realtime {
+    position: fixed;
+    left:0;
+    bottom:0;
+}
+
+.mdl-layout__drawer-button > .material-icons {
+    margin-top: 10px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .mdl-card.poll {
+        width: 100%;
+    }
+    .mdl-textfield {
+        width: 100%;
+    }
+}

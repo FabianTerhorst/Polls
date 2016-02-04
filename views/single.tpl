@@ -16,6 +16,7 @@
         <button type="button" class="mdl-button close">Abbrechen</button>
     </div>
 </dialog>
+<button id="realtime">RealTime Connection (Beta)</button>
 <script type="text/javascript">
     $id = "{$pollId}";
     function selectPoll() {
@@ -36,6 +37,7 @@
                             'answerid': $(this).attr("answerid")
                         },
                         success: function(msg){
+                            console.log(msg);
                             var json = JSON.parse(msg);
                             json.forEach(function(entry) {
                                 var width = entry.votes.toString() + "%";
@@ -43,6 +45,24 @@
                             });
                         }
                     })
+                });
+            }
+        });
+    }
+
+    function updateVotes(){
+        $.ajax({
+            url: "/api/getVotes",
+            type: 'POST',
+            data: {
+                'pollid': '{$pollId}'
+            },
+            success: function(msg){
+                console.log(msg);
+                var json = JSON.parse(msg);
+                json.forEach(function(entry) {
+                    var width = entry.votes.toString() + "%";
+                    $("#answer" + entry.id).css("width", width);
                 });
             }
         });
@@ -72,5 +92,15 @@
     dialog.querySelector('.close').addEventListener('click', function() {
         dialog.close();
     });
+
+    $("#realtime").click(function() {
+        setInterval(updateVotes, 2000);
+    });
+
+    function sleepFor( sleepDuration ){
+        var now = new Date().getTime();
+        while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
+    }
+
 </script>
 {include file="footer.tpl"}

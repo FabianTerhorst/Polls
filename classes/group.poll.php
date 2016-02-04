@@ -23,7 +23,7 @@ class Polls
             }
         }
         if($redirect) {
-            header("Location: http://localhost:1026/" . $id);
+            header("Location: http://h.t-softec.de/" . $id);
         }
         return $id;
     }
@@ -32,7 +32,7 @@ class Polls
         $pollidCurrent = $this->add(false);
         $pollid = $_POST["pollid"];
         mysql_query("INSERT INTO polls_polls (pollid, pollid_child) VALUES (". $pollid . ", " . $pollidCurrent .")") or die(mysql_error());
-        header("Location: http://localhost:1026/" . $pollid);
+        header("Location: http://h.t-softec.de/" . $pollid);
     }
 
     function get(){
@@ -122,13 +122,55 @@ class Polls
                 $arrAnswers[] = $answer;
             }
         }
+
+        $dataChilds = mysql_query("SELECT * FROM polls_polls WHERE pollid = " . $id) or die(mysql_error());
+        if (mysql_num_rows($dataChilds) > 0) {
+            while ($rowChild = mysql_fetch_assoc($dataChilds)) {
+                $dataChildPoll = mysql_query("SELECT * FROM polls WHERE id = " . $rowChild["pollid_child"]) or die(mysql_error());
+                if (mysql_num_rows($dataChildPoll) > 0) {
+                    while ($rowChildPoll = mysql_fetch_assoc($dataChildPoll)) {
+                        $dataChildAnswers = mysql_query("SELECT * FROM polls_answers WHERE pollid = " . $rowChildPoll["id"]) or die(mysql_error());
+                        $childVotesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $rowChildPoll["id"]) or die(mysql_error());
+                        $childPollVotes = mysql_result($childVotesResult, 0);
+
+                        if (mysql_num_rows($dataChildAnswers) > 0) {
+                            while ($rowChildAnswer = mysql_fetch_assoc($dataChildAnswers)) {
+                                $childAnswer = new Answer();
+                                $childAnswer->id = $rowChildAnswer["id"];
+                                $childAnswer->name = $rowChildAnswer["name"];
+                                $childVotesResult = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $rowChildPoll["id"] ." AND answerid = " . $rowChildAnswer["id"]) or die(mysql_error());
+                                $childAnswerVotes = mysql_result($childVotesResult, 0);
+                                $childAnswer->votes = 100 / $childPollVotes * $childAnswerVotes;
+                                $arrAnswers[] = $childAnswer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         echo json_encode($arrAnswers);
     }
 
     function vote(){
         $pollid = $_POST["pollid"];
         $answerid = $_POST["answerid"];
-        mysql_query("INSERT INTO polls_votes (pollid, answerid) VALUES ('" . $pollid . "', '" . $answerid . "')") or die(mysql_error());
+        $ipCount = mysql_query("SELECT COUNT(*) FROM polls_votes WHERE pollid = " . $pollid . " AND ip = '" . $this->getIp() . "'") or die(mysql_error());
+        $count = mysql_result($ipCount, 0);
+        if($count == 0){
+            mysql_query("INSERT INTO polls_votes (pollid, answerid, ip) VALUES ('" . $pollid . "', '" . $answerid . "','" . $this->getIp() . "')") or die(mysql_error());
+        }
         $this->getVotes($pollid);
+    }
+
+    function getIp(){
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
     }
 }
